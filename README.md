@@ -3,6 +3,9 @@
 
 #### Inital version V1.0
 
+If you want to see the complete steps to complete the activity 
+please see the DOC included in this repo.
+
 ### Updates 19 / JUL / 2018
 - Install Linux with Dockek.
 - Learning how to use Docker.
@@ -22,7 +25,13 @@
 - Upload to GitHub.
 
 ### Update 24 / JUL / 2018
-- Search for Docker Machines.
+- Search for general information about Docker Machines.
 
 ### Update 25 / JUL / 2018
-- NONE
+- Look for how to run programs in docker-machines.
+
+### Update 26 / JUL / 2018
+- Added VM for Server and test with my local.
+
+### Update 27 / JUL / 2018
+-
