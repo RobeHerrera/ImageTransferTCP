@@ -34,4 +34,7 @@ please see the DOC included in this repo.
 - Added VM for Server and test with my local.
 
 ### Update 27 / JUL / 2018
--
+- Upload Program TCP images transfer
+
+### Update 28/ JUL /2018
+- TODO: integrate program to transfer images to the other one with classes

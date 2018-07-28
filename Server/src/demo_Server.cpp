@@ -24,8 +24,11 @@ int main(int argc, char** argv)
     std::istringstream arg_stream(argv[1]);
 
     // bind arguments stream to port int variable if valid
-    if ( !(arg_stream >> port) )
+    if ( !(arg_stream >> port) ){
       std::cerr << "Invalid number " << argv[1] << '\n';
+    } else{
+    printf("Port: %d",port);
+      }
   }
 
   // create server instance with specified port number

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1532705474 source:/home/rohe/Documents/ClientImage/ClientImage.cpp
+	<stdio.h>
+	<string.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<iostream>
+	<fstream>
+	<errno.h>
+
