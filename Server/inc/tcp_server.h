@@ -36,7 +36,13 @@ public:
   void OnMessage(void (*fptr)(Node*,string) );
 
   // stop tcp server
-  void Stop();
+  int Stop();
+
+  // run server
+  int Run();
+
+  // send Image
+  void SendImage();
 
 private:
 

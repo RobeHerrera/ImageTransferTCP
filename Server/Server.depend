@@ -1,125 +1,10 @@
 # depslib dependency file v1.0
-1532398398 source:/home/rohe/Documents/Server/Server/node.cpp
-	"node.h"
-
-1532142449 /home/rohe/Documents/Server/Server/utils.h
-	<sys/socket.h>
-	<netdb.h>
-	<netinet/in.h>
-
-1532397854 source:/home/rohe/Documents/Server/Server/Server.cpp
-	"tcp_server.h"
-	<stdexcept>
-	<iostream>
-
-1532397675 /home/rohe/Documents/Server/Server/tcp_server.h
-	<vector>
-	<iostream>
-	<string>
-	<unistd.h>
-	<cstring>
-	<sys/socket.h>
-	<netdb.h>
-	<netinet/in.h>
-	"node.h"
-	"utils.h"
-
-1532397382 /home/rohe/Documents/Server/Server/node.h
-	<iostream>
-	<string>
-	<cstring>
-	<sys/socket.h>
-	<netdb.h>
-	<netinet/in.h>
-	<unistd.h>
-	<arpa/inet.h>
-	"utils.h"
-
-1532397407 source:/home/rohe/Documents/Server/Server/socket_manager.cpp
-	"socket_manager.h"
-	"utils.h"
-	<strings.h>
-	<sys/socket.h>
-	<netdb.h>
-	<netinet/in.h>
-	<errno.h>
-	<arpa/inet.h>
-
-1532142465 /home/rohe/Documents/Server/Server/socket_manager.h
-	<string>
-	<sys/socket.h>
-
-1532397945 source:/home/rohe/Documents/Server/Server/demo_Server.cpp
-	<iostream>
-	"tcp_server.h"
-	<sstream>
-
-1532398221 source:/home/rohe/Documents/Server/Server/tcp_server.cpp
-	"tcp_server.h"
-	<stdexcept>
-	<iostream>
-
-1532398769 source:/home/rohe/Documents/Server/Server/src/demo_Server.cpp
+1532835424 source:/home/rohe/Documents/ImageTransferTCP/Server/src/demo_Server.cpp
 	<iostream>
 	"../inc/tcp_server.h"
 	<sstream>
 
-1532397675 /home/rohe/Documents/Server/Server/inc/tcp_server.h
-	<vector>
-	<iostream>
-	<string>
-	<unistd.h>
-	<cstring>
-	<sys/socket.h>
-	<netdb.h>
-	<netinet/in.h>
-	"node.h"
-	"utils.h"
-
-1532397382 /home/rohe/Documents/Server/Server/inc/node.h
-	<iostream>
-	<string>
-	<cstring>
-	<sys/socket.h>
-	<netdb.h>
-	<netinet/in.h>
-	<unistd.h>
-	<arpa/inet.h>
-	"utils.h"
-
-1532142449 /home/rohe/Documents/Server/Server/inc/utils.h
-	<sys/socket.h>
-	<netdb.h>
-	<netinet/in.h>
-
-1532398803 source:/home/rohe/Documents/Server/Server/src/node.cpp
-	"../inc/node.h"
-
-1532398816 source:/home/rohe/Documents/Server/Server/src/socket_manager.cpp
-	"../inc/socket_manager.h"
-	"../inc/utils.h"
-	<strings.h>
-	<sys/socket.h>
-	<netdb.h>
-	<netinet/in.h>
-	<errno.h>
-	<arpa/inet.h>
-
-1532142465 /home/rohe/Documents/Server/Server/inc/socket_manager.h
-	<string>
-	<sys/socket.h>
-
-1532398820 source:/home/rohe/Documents/Server/Server/src/tcp_server.cpp
-	"../inc/tcp_server.h"
-	<stdexcept>
-	<iostream>
-
-1532742977 source:/home/rohe/Documents/ImageTransferTCP/Server/src/demo_Server.cpp
-	<iostream>
-	"../inc/tcp_server.h"
-	<sstream>
-
-1532742977 /home/rohe/Documents/ImageTransferTCP/Server/inc/tcp_server.h
+1532835122 /home/rohe/Documents/ImageTransferTCP/Server/inc/tcp_server.h
 	<vector>
 	<iostream>
 	<string>
@@ -164,7 +49,7 @@
 	<string>
 	<sys/socket.h>
 
-1532742977 source:/home/rohe/Documents/ImageTransferTCP/Server/src/tcp_server.cpp
+1532837938 source:/home/rohe/Documents/ImageTransferTCP/Server/src/tcp_server.cpp
 	"../inc/tcp_server.h"
 	<stdexcept>
 	<iostream>

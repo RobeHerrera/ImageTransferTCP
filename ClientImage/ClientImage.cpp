@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
     memset(&server,0,sizeof(server));
     server.sin_addr.s_addr = inet_addr("127.0.0.1");
     server.sin_family = AF_INET;
-    server.sin_port = htons( 8889 );
+    server.sin_port = htons( 12002 ); //PORT: 12002
 
     //Connect to remote server
     if (connect(socket_desc, (struct sockaddr *)&server, sizeof(server)) < 0)

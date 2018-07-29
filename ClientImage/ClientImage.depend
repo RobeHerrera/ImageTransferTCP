@@ -9,3 +9,14 @@
 	<fstream>
 	<errno.h>
 
+1532835607 source:/home/rohe/Documents/ImageTransferTCP/ClientImage/ClientImage.cpp
+	<stdio.h>
+	<string.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<iostream>
+	<fstream>
+	<errno.h>
+

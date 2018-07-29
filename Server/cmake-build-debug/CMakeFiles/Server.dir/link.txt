@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Server.dir/src/demo_Server.cpp.o CMakeFiles/Server.dir/src/node.cpp.o CMakeFiles/Server.dir/src/socket_manager.cpp.o CMakeFiles/Server.dir/src/tcp_server.cpp.o  -o Server 
