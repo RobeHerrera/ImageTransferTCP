@@ -43,14 +43,20 @@ please see the DOC included in this repo.
 - DAY OF WITH FAMILY
 
 ### Update 30/ JUL / 2018
+- NOTHING TO UPDATE
+
+### Update 30/ JUL / 2018
+- Create Menu for Client and integrate image received
+
+## PENDING TASKS:
 - TODO: Check if the communication comes from the same network,
 	I could use XAMPP to serve the port, also a need to see how open port in my router.
 - TODO: Intengrate the client received images usign clases.
-- TODO: Create a menu in the client.
+- DOING: Create a menu in the client.
 - TODO: Use a command to select the desired image. [To confirm]
 - TODO: Create a docket images to recreate all this.
 
-QUESTION:
+## QUESTION:
 - exif is a function that I need to do?, or use the already create exif to read the metadata of the images?
 - I don't know what could be the difence vs little and big endian in the network transfer. How I can make a machine with diferent endianness ?
 - 
