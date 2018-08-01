@@ -9,6 +9,13 @@
 #include <sys/socket.h> // Needed for the socket functions
 #include <netdb.h>      // Needed for the socket functions
 #include <netinet/in.h> // Needed for internet addresses
+#include<stdio.h>
+#include<string.h>
+#include<arpa/inet.h>
+#include<sys/ioctl.h>
+#include<unistd.h>
+#include<fstream>
+#include<errno.h>
 
 // library specific headers
 #include "node.h"
@@ -26,7 +33,7 @@ namespace tcp{
     client(string, int);
 
     // connect to host node
-    void Connect(void);
+    int Connect(void);
 
     // send message to currently connected host node
     void Send(string);
@@ -42,6 +49,12 @@ namespace tcp{
 
     // Stop connection with host
     void Stop();
+
+    // Received an image
+    int ReceivedImage();
+
+    // Received Text
+    int ReceivedText();
 
   private:
 

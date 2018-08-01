@@ -101,47 +101,7 @@ int main(int argc, char** argv)
             // Do nothing
             cout << "Bye." << std::endl;
             break;
-
-
-
         }
-
-
-//        /**** Recieved some text from the client ****/
-
-//        if(opt==RECIEVED_TEXT)
-//        {
-
-//            //start listening to connections
-//            int result = server.Listen(); //this line causes the error using switch case
-//            result = server.Stop();
-//            if(result == 1)
-//            {
-//                cout << "Complete..." << std::endl;
-//            }
-//        }
-
-//
-//
-//        /**** Recieved some image from the client ****/
-//        if(opt==RECIEVED_IMG)
-//        {
-//
-//        }
-//
-//        /**** Recieved some image from the client ****/
-//        if(opt==SEND_TEXT)
-//        {
-//
-//        }
-//
-//
-//        /**** Recieved some image from the client ****/
-//        if(opt==SEND_IMG)
-//        {
-//
-//        }
-
 
     }
     while(opt != EXIT);

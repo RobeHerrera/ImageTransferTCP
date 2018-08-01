@@ -45,16 +45,17 @@ please see the DOC included in this repo.
 ### Update 30/ JUL / 2018
 - NOTHING TO UPDATE
 
-### Update 30/ JUL / 2018
+### Update 31/ JUL / 2018
 - Create Menu for Client and integrate image received
 
+### Update 1 / AUG / 2018
+- TODO: Add metadata to the image
+
 ## PENDING TASKS:
-- TODO: Check if the communication comes from the same network,
+- Check if the communication comes from the same network,
 	I could use XAMPP to serve the port, also a need to see how open port in my router.
-- TODO: Intengrate the client received images usign clases.
-- DOING: Create a menu in the client.
-- TODO: Use a command to select the desired image. [To confirm]
-- TODO: Create a docket images to recreate all this.
+- Use a command exif to select the desired image. [To confirm]
+- Create a docket images to recreate all this.
 
 ## QUESTION:
 - exif is a function that I need to do?, or use the already create exif to read the metadata of the images?

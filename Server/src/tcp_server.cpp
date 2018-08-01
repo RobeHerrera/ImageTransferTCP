@@ -103,7 +103,7 @@ int server :: Listen ()
             std::cerr << "failed to execute [OnMessage] function";
         }
     }
-    close(_client_socket_fd);
+    //close(_client_socket_fd);
     return 1;
 }
 
