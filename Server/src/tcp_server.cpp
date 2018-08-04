@@ -174,6 +174,13 @@ void server :: SendImage()
     char send_buffer[10240], read_buffer[256];
     packet_index = 1;
 
+    //INJECT METADATA TO THE IMAGE
+    // TODO: get the the correct information
+    // Function Stub ¡
+    system("exiftool -m -UserComment=\"Comentario desde asdf\" images/2.jpg");
+
+    system("exiftool -UserComment images/2.jpg");
+
     picture = fopen("images/2.jpg", "r");
     printf("Getting Picture Size\n");
 
@@ -202,7 +209,7 @@ void server :: SendImage()
     while (stat < 0);
 
     printf("Received data in socket\n");
-    printf("Socket data: %c\n", read_buffer);
+    printf("Socket data: %s\n", read_buffer);
 
     while(!feof(picture))
     {

@@ -66,8 +66,15 @@ int main(int argc, char** argv)
 
         case RECEIVED_IMG:
         {
-            client.ReceivedImage();
+            char nameImage[] = "image.jpeg";
+            client.ReceivedImage(nameImage);
 
+            // Check  metadata with exiftool
+            //string cmd = "exiftool -UserComment ";
+            string cmd = "exiftool -UserComment ";
+            cmd  = cmd + nameImage;
+            const char *command = cmd.c_str();
+            system(command);
         }
         break;
 
@@ -75,6 +82,7 @@ int main(int argc, char** argv)
         {
             // send message to host
             client.Send("Hi! - from client desde la casa de Robe");
+
 
         }
         break;

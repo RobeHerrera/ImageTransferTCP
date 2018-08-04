@@ -132,7 +132,7 @@ int client :: ReceivedText()
  Parameters: Socked_fd, number of the port to listen the conection
 *************************************************************************************************/
 
-int client :: ReceivedImage()
+int client :: ReceivedImage(char nameImage[])
 {
     // Start function
 
@@ -165,7 +165,7 @@ int client :: ReceivedImage()
     printf("Reply sent\n");
     printf(" \n");
 
-    image = fopen("fromServer.jpg", "w");
+    image = fopen(nameImage, "w");
 
     if( image == NULL)
     {

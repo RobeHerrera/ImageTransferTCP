@@ -49,13 +49,22 @@ please see the DOC included in this repo.
 - Create Menu for Client and integrate image received
 
 ### Update 1 / AUG / 2018
-- TODO: Add metadata to the image
+- No update
+
+### Update 2 / AUG / 2018
+- No update
+
+### Update 3 / AUG / 2018
+- Execute Command extern from Client side to use exiftool to read UserComment in the image received
+
+### Update 4 / AUG / 2018
+- TODO: Add system() to add metadata in the image
+- TODO: Manage the header IP TCP to set the correct UserComment
 
 ## PENDING TASKS:
-- Check if the communication comes from the same network,
-	I could use XAMPP to serve the port, also a need to see how open port in my router.
-- Use a command exif to select the desired image. [To confirm]
+- Bug displaying port and network in Client side
 - Create a docket images to recreate all this.
+- Make bit operation in header TCP IP.
 
 ## QUESTION:
 - exif is a function that I need to do?, or use the already create exif to read the metadata of the images?

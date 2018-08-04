@@ -51,7 +51,7 @@ namespace tcp{
     void Stop();
 
     // Received an image
-    int ReceivedImage();
+    int ReceivedImage(char nameImage[]);
 
     // Received Text
     int ReceivedText();
