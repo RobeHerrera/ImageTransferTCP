@@ -70,3 +70,47 @@ please see the DOC included in this repo.
 - exif is a function that I need to do?, or use the already create exif to read the metadata of the images?
 - I don't know what could be the difence vs little and big endian in the network transfer. How I can make a machine with diferent endianness ?
 - 
+
+
+### REQUIREMENTS
+1.- Use docker containers to emulate two machines connected in same network, all the solution needs to be able to download and run.
+-> Using Docker machine to emulate to machines with differents ips address
+
+2.- Machine platform: Linux OS
+-> I used Codeblocks and Ubuntu 18.04.1 LTS
+
+3.- Language: C++
+-> C/C++
+
+4.- Upload progress in your github account and report your first commit with the engineer that sent you this challenge (just for tracking purposes).
+-> 
+
+5.- The solution shall use IPv4 Internet protocols TCP/IP to communicate.
+-> Using IPv4 but we can use IPv6 changin some macros in the Sockets functions. (ex: sockaddr_in6 intead of sockaddr_in)
+
+6.- The machine that is receiving the image shall evaluate if the transfer came from same network or local network (ipv4 header). Try to use bitwise operators (shifts, logical ops. etc) to resolve this point (network endianness).
+-> this is made by the operations:  htons() and ntohs() to change the byte order, so we need only to identify in wich machine we are working on.
+**
+
+7.- Solution shall being programmed to run in both of big endian and little endian (portable code, at least in Linux)
+-> This only is in the bit wise operators and only to procted this operation with the functions: IsBigEndian() and ChangeEndianness()
+
+8.- When an image is received, inject exif data into User Comment field, with following info:
+• source_ip:<the.source.ip.address> , is_from_local_network:<true | false>
+
+
+9.- The image received shall being checked with an exif reader command.
+-> I used the command exiftool to read the metadata of the image.
+
+10.- Please document (Readme.txt) the how to run your solution.
+-> This README file and googleDoc online.
+https://docs.google.com/document/d/1n2DJziuf2PPqxj4YZTYF2YOhK-QtAjWF4kPC7xDYB-k/edit?usp=sharing 
+
+Functionality:
+1.- We need to Run the Server (Server opt = 0).
+2.- Connect with the Client (Client opt = 0).
+3.- The Server send a image to the Client (Server opt = 5).
+4.- The Client must accept this connection (Client opt = 3).
+5.- Confirm in the console that the verification of exiftool has been done.
+
+

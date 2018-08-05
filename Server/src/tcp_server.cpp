@@ -9,6 +9,16 @@
 
 using namespace std;
 
+int IsBigEndian() {
+    int i = 1;
+    char *p = (char *)&i;
+
+    if (p[0] == 1)
+        return 0;
+    else
+        return 1;
+}
+
 namespace tcp
 {
 
@@ -26,7 +36,16 @@ server :: server (int portNumber)
 
     _server_address.sin_family      = AF_INET;           // IP version not specified. Can be both.
     _server_address.sin_addr.s_addr = htonl(INADDR_ANY); // make server accept all addresses
+
+        if(IsBigEndian()){
+    //Big Endian
+    _server_address.sin_port        = _port;      // Set port number in type [network byte order]
+        }else{
+    //Little Endian
     _server_address.sin_port        = htons(_port);      // Set port number in type [network byte order]
+    // _server_address.sin_port  = ChangeEndianness(port_number);
+    }
+
 
     // initialize socket with [internet addresses, socket stream sequences with default protocol]
     _server_socket_fd = socket( __type_internet_domain_sockets__, __type_byte_stream_socket__, 0);
@@ -168,14 +187,37 @@ void server :: SendImage()
     char send_buffer[10240], read_buffer[256];
     packet_index = 1;
 
-    //INJECT METADATA TO THE IMAGE
+    /*************************INJECT METADATA TO THE IMAGE **************************/
     // TODO: get the the correct information
     // Function Stub ¡
-    system("exiftool -m -UserComment=\"Comentario desde asdf\" images/2.jpg");
+    char strSourceIP[INET_ADDRSTRLEN];
+    const char *nameImage = "images/2.jpg";
 
-    system("exiftool -UserComment images/2.jpg");
+    inet_ntop(AF_INET, &(_server_address.sin_addr), strSourceIP, INET_ADDRSTRLEN);
 
-    picture = fopen("images/2.jpg", "r");
+    string cmd = "exiftool -m -UserComment=\"source_ip:";
+    cmd  = cmd + strSourceIP +"\" "+nameImage;
+//    const char *command = cmd.c_str();
+
+    /*This should be injected in the Client side*/
+    //printf("%s\n",command);
+    //system(command); // "exiftool -m -UserComment=source_ip:127.0.0.1"
+
+
+//    system("exiftool -m -UserComment=\"Comentario desde asdf\" images/2.jpg");
+    //Verify if the image get the correct value
+
+    cmd = "exiftool -UserComment ";
+    cmd  = cmd + nameImage;
+    const char *command2 = cmd.c_str();
+    printf("%s\n",command2);
+    system(command2);
+    //system("exiftool -UserComment images/2.jpg");
+
+
+    /***************************************************************************/
+
+    picture = fopen(nameImage, "r");
     printf("Getting Picture Size\n");
 
     if(picture == NULL || picture == 0)

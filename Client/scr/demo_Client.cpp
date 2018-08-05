@@ -5,6 +5,7 @@
 
 using std::string;
 
+
 int main(int argc, char** argv)
 {
 
@@ -25,6 +26,9 @@ int main(int argc, char** argv)
 
     // create server instance with specified port number
     tcp::client client(address,port);
+
+    //printf("cambio de endian de 12002: %x -> %x ",12002, ChangeEndianness(12002));
+
 
 
 
@@ -71,6 +75,7 @@ int main(int argc, char** argv)
 
             // Check  metadata with exiftool
             //string cmd = "exiftool -UserComment ";
+            printf("Print metadata with exiftool!\n");
             string cmd = "exiftool -UserComment ";
             cmd  = cmd + nameImage;
             const char *command = cmd.c_str();

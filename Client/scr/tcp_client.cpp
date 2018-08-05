@@ -10,6 +10,28 @@
 
 using namespace std;
 
+int IsBigEndian()
+{
+    int i = 1;
+    char *p = (char *)&i;
+
+    if (p[0] == 1)
+        return 0; //Little
+    else
+        return 1; //Big
+}
+
+
+uint16_t ChangeEndianness(uint16_t value)
+{
+    uint16_t result = 0;
+    result |= (value & 0x00FF) << 8;
+    result |= (value & 0xFF00) >> 8;
+    return result;
+}
+
+
+
 namespace tcp
 {
 // ---------------------------------------------------------------------------------------------
@@ -31,7 +53,19 @@ client :: client (string host_address_name, int port_number) : Node(port_number)
     // initialize host address struct
     host_address.sin_family      = __type_internet_domain_sockets__;
     host_address.sin_addr.s_addr = inet_addr( host_address_name.c_str() );
-    host_address.sin_port        = htons(port_number);
+
+    if(IsBigEndian())
+    {
+        //Big Endian
+        host_address.sin_port    = port_number;
+    }
+    else
+    {
+        //Little Endian
+        host_address.sin_port    = htons(port_number);
+        //host_address.sin_port = ChangeEndianness(port_number);
+    }
+
 
     // initialize connection socket
     socket_fd = socket( __type_internet_domain_sockets__, __type_byte_stream_socket__, 0 );
@@ -178,8 +212,6 @@ int client :: ReceivedImage(char nameImage[])
     }
 
 //Loop while we have not received the entire file yet
-
-
     struct timeval timeout = {10,0};
 
     fd_set fds;
@@ -187,7 +219,6 @@ int client :: ReceivedImage(char nameImage[])
 
     while(recv_size < size)
     {
-//while(packet_index < 2){
 
         FD_ZERO(&fds);
         FD_SET(socket_fd,&fds);
@@ -236,6 +267,11 @@ int client :: ReceivedImage(char nameImage[])
     fclose(image);
     printf("Image successfully Received!\n");
 
+    /***********  Inject Metadata ***************/
+    printf("Now inject Metadata to the image!\n");
+
+
+    /*******************************************/
     return 1;
 }
 
