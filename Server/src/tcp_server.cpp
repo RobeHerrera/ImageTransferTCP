@@ -148,12 +148,6 @@ void server :: SendImage()
 
     //Accept and incoming connection
     puts("Waiting for incoming connections...");
-//    int c = sizeof(struct sockaddr_in); //this implementation is important
-//
-//    if((_client_socket_fd = accept(_server_socket_fd, (struct sockaddr *)&_client_address,(socklen_t*)&c)))
-//    {
-//        puts("Connection accepted");
-//    }
 
     // initialize client address struct and accept new connection
     _client_address_length = sizeof( _client_address_length);

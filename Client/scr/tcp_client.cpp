@@ -51,12 +51,16 @@ int client :: Connect ()
     //Connect to remote node
     if (connect( socket_fd, (struct sockaddr *)&host_address, sizeof(host_address)) < 0)
     {
-        cout<<strerror(errno);
+        cout<<strerror(errno)<<endl;
         close(socket_fd);
         puts("Connect Error");
         return 1;
     }
-    cout << "Connected to: " << host_address.sin_addr.s_addr <<"port: " << host_address.sin_port << std::endl;
+    else
+    {
+        char str[INET_ADDRSTRLEN];
+        cout << "Connected to: " << inet_ntop(AF_INET, &(host_address.sin_addr), str, INET_ADDRSTRLEN) <<" port: " << ntohs(host_address.sin_port) << std::endl;
+    }
     return 0;
 
 }
