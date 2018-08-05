@@ -2,8 +2,49 @@
 #include "../inc/tcp_client.h"
 #include <sstream>
 #include <string>
+#include <stdio.h>
+#include <sys/types.h>
+#include <ifaddrs.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 
 using std::string;
+
+void getMyIPAddress()
+{
+    struct ifaddrs * ifAddrStruct=NULL;
+    struct ifaddrs * ifa=NULL;
+    void * tmpAddrPtr=NULL;
+
+    getifaddrs(&ifAddrStruct);
+
+    for (ifa = ifAddrStruct; ifa != NULL; ifa = ifa->ifa_next)
+    {
+        if (!ifa->ifa_addr)
+        {
+            continue;
+        }
+        if (ifa->ifa_addr->sa_family == AF_INET)   // check it is IP4
+        {
+            // is a valid IP4 Address
+            tmpAddrPtr=&((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
+            char addressBuffer[INET_ADDRSTRLEN];
+            inet_ntop(AF_INET, tmpAddrPtr, addressBuffer, INET_ADDRSTRLEN);
+            printf("%s IPv4 Address %s\n", ifa->ifa_name, addressBuffer);
+        }
+//        else if (ifa->ifa_addr->sa_family == AF_INET6)     // check it is IP6
+//        {
+//            // is a valid IP6 Address
+//            tmpAddrPtr=&((struct sockaddr_in6 *)ifa->ifa_addr)->sin6_addr;
+//            char addressBuffer[INET6_ADDRSTRLEN];
+//            inet_ntop(AF_INET6, tmpAddrPtr, addressBuffer, INET6_ADDRSTRLEN);
+//            printf("%s IPv6 Address %s\n", ifa->ifa_name, addressBuffer);
+//        }
+    }
+    if (ifAddrStruct!=NULL) freeifaddrs(ifAddrStruct);
+}
+
+
 
 
 int main(int argc, char** argv)
@@ -28,7 +69,7 @@ int main(int argc, char** argv)
     tcp::client client(address,port);
 
     //printf("cambio de endian de 12002: %x -> %x ",12002, ChangeEndianness(12002));
-
+getMyIPAddress();
 
 
 
@@ -72,6 +113,23 @@ int main(int argc, char** argv)
         {
             char nameImage[] = "image.jpeg";
             client.ReceivedImage(nameImage);
+
+            char szBuffer[1024];
+            struct hostent *host = gethostbyname(szBuffer);
+
+
+
+//            ((struct in_addr *)(host->h_addr))->S_un.S_un_b.s_b1;
+//
+//            openHostDb();
+//            string localHostName = client.getHostName();
+//            string localHostAddr = client.getHostIPAddress();
+
+//            cout << "----------------------------------------" << endl;
+//            cout << "   My local host information:" << endl;
+//            cout << "         Name:    " << localHostName << endl;
+//            cout << "         Address: " << localHostAddr << endl;
+//            cout << "----------------------------------------" << endl;
 
             // Check  metadata with exiftool
             //string cmd = "exiftool -UserComment ";

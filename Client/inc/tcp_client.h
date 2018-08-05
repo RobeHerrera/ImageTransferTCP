@@ -23,11 +23,12 @@
 
 using namespace std;
 
-namespace tcp{
-  class client : public Node
-  {
+namespace tcp
+{
+class client : public Node
+{
 
-  public:
+public:
 
     // initialize a new tcp client instance
     client(string, int);
@@ -56,12 +57,37 @@ namespace tcp{
     // Received Text
     int ReceivedText();
 
-  private:
+    struct hostent *hostPtr;    // Entry within the host address database
+
+
+
+
+    char* getHostIPAddress()
+    {
+        struct in_addr *addr_ptr;
+        // the first address in the list of host addresses
+        addr_ptr = (struct in_addr *)*hostPtr->h_addr_list;
+        // changed the address format to the Internet address in standard dot notation
+        return inet_ntoa(*addr_ptr);
+    }
+
+    // Retrieves the hosts name
+    char* getHostName()
+    {
+        return hostPtr->h_name;
+    }
+
+   string getMyIPAddress();
+
+private:
 
     // child proceess id
     pid_t  _childpid;
 
-  };
+    int is_local(const struct sockaddr *addr, socklen_t addr_len);
+
+
+};
 }
 #endif
 

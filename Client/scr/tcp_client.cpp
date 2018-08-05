@@ -10,6 +10,11 @@
 
 using namespace std;
 
+
+
+namespace tcp
+{
+
 int IsBigEndian()
 {
     int i = 1;
@@ -32,8 +37,8 @@ uint16_t ChangeEndianness(uint16_t value)
 
 
 
-namespace tcp
-{
+
+
 // ---------------------------------------------------------------------------------------------
 // Summary        : Create new instance of tcp client class (Class constructor)
 //
@@ -270,9 +275,38 @@ int client :: ReceivedImage(char nameImage[])
     /***********  Inject Metadata ***************/
     printf("Now inject Metadata to the image!\n");
 
+    cout << "----------------------------------------" << endl;
+
+    char strSourceIP[INET_ADDRSTRLEN];
+
+    inet_ntop(AF_INET, &(host_address.sin_addr), strSourceIP, INET_ADDRSTRLEN);
+
+    string cmd = "exiftool -m -UserComment=\"source_ip:";
+    cmd  = cmd + strSourceIP +", is_from_local_network:";
+
+
+    if(strcmp(strSourceIP,"127.0.0.0"))
+    {
+        cmd = cmd + "true\" ";
+    }
+    else
+    {
+        cmd = cmd + "false\" ";
+    }
+
+    cmd = cmd + nameImage; // string: exiftool -m -UserComment="source_ip:127.0.0.1, is_from_local_network:true" image.jpeg
+
+    const char *command = cmd.c_str();
+    printf("%s\n",command);
+    system(command); // "exiftool -m -UserComment=source_ip:127.0.0.1"
+
+    cout << "Connected to: " << strSourceIP <<" port: " << ntohs(host_address.sin_port) << std::endl;
+
 
     /*******************************************/
     return 1;
 }
+
+
 
 }//End namespace

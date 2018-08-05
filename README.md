@@ -58,18 +58,19 @@ please see the DOC included in this repo.
 - Execute Command extern from Client side to use exiftool to read UserComment in the image received
 
 ### Update 4 / AUG / 2018
-- TODO: Add system() to add metadata in the image
-- TODO: Manage the header IP TCP to set the correct UserComment
+- Add system() to add metadata in the image
+
+### Update 5 / AUG / 2018
+- Manage the header IP TCP to set the correct UserComment
+
+## Update 5 / AUG / 2018
+- TODO: Complete image of Docker one for Server and other for Client
 
 ## PENDING TASKS:
-- Bug displaying port and network in Client side
+- Accept more than one connection.
 - Create a docket images to recreate all this.
-- Make bit operation in header TCP IP.
+- How I can I get the complte IP header, in wich buffer or struct is stored.
 
-## QUESTION:
-- exif is a function that I need to do?, or use the already create exif to read the metadata of the images?
-- I don't know what could be the difence vs little and big endian in the network transfer. How I can make a machine with diferent endianness ?
-- 
 
 
 ### REQUIREMENTS
@@ -83,7 +84,8 @@ please see the DOC included in this repo.
 -> C/C++
 
 4.- Upload progress in your github account and report your first commit with the engineer that sent you this challenge (just for tracking purposes).
--> 
+-> Ypu can see my progress in the next repository in gitHub:
+ https://github.com/RobeHerrera/ImageTransferTCP.git
 
 5.- The solution shall use IPv4 Internet protocols TCP/IP to communicate.
 -> Using IPv4 but we can use IPv6 changin some macros in the Sockets functions. (ex: sockaddr_in6 intead of sockaddr_in)
@@ -97,10 +99,10 @@ please see the DOC included in this repo.
 
 8.- When an image is received, inject exif data into User Comment field, with following info:
 • source_ip:<the.source.ip.address> , is_from_local_network:<true | false>
-
+-> in the Client side make this injection of the code with exiftool command.
 
 9.- The image received shall being checked with an exif reader command.
--> I used the command exiftool to read the metadata of the image.
+-> I used the command exiftool to write and read the metadata of the image.
 
 10.- Please document (Readme.txt) the how to run your solution.
 -> This README file and googleDoc online.

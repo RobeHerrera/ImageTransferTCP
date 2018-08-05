@@ -9,7 +9,8 @@
 
 using namespace std;
 
-int IsBigEndian() {
+int IsBigEndian()
+{
     int i = 1;
     char *p = (char *)&i;
 
@@ -18,6 +19,39 @@ int IsBigEndian() {
     else
         return 1;
 }
+
+//int is_local(const struct sockaddr *addr, socklen_t addr_len)
+//{
+//    const char *func = "is_local()";
+//    int result = 0;
+//
+//    int tmp = socket(addr->sa_family, SOCK_STREAM, 0);
+//    if (tmp < 0) {
+//        printf("%s: socket(%d,SOCK_STREAM,0) failed, errno %d\n",
+//               func, addr->sa_family);
+//
+//        goto out;
+//    }
+//
+//    /* If bind() succeeds, or if it fails because the address is in
+//       use, then the address must be local to this system. */
+//    if (bind(tmp, addr, addr_len) < 0) {
+//        if (errno == EADDRINUSE)
+//            result = 1;
+//        else if (errno == EADDRNOTAVAIL)
+//            ; /* do nothing; address is remote */
+//        else
+//            printf("%s: bind() unexpected error %d\n", func, errno);
+//    }
+//    else {
+//        result = 1;
+//    }
+//
+//    close(tmp);
+//
+// out:
+//    return result;
+//}
 
 namespace tcp
 {
@@ -37,13 +71,16 @@ server :: server (int portNumber)
     _server_address.sin_family      = AF_INET;           // IP version not specified. Can be both.
     _server_address.sin_addr.s_addr = htonl(INADDR_ANY); // make server accept all addresses
 
-        if(IsBigEndian()){
-    //Big Endian
-    _server_address.sin_port        = _port;      // Set port number in type [network byte order]
-        }else{
-    //Little Endian
-    _server_address.sin_port        = htons(_port);      // Set port number in type [network byte order]
-    // _server_address.sin_port  = ChangeEndianness(port_number);
+    if(IsBigEndian())
+    {
+        //Big Endian
+        _server_address.sin_port        = _port;      // Set port number in type [network byte order]
+    }
+    else
+    {
+        //Little Endian
+        _server_address.sin_port        = htons(_port);      // Set port number in type [network byte order]
+        // _server_address.sin_port  = ChangeEndianness(port_number);
     }
 
 
@@ -84,11 +121,14 @@ int server :: Listen ()
 
     _client_socket_fd = accept( _server_socket_fd, (struct sockaddr *)&_client_address, &_client_address_length);
 
+//    if (    ((struct sockaddr *)&_client_address, _client_address_length)){
+//
+//    }
 
-    /*Do I really need this condition*/
-    // skip iteration if no incoming connections
-    if(_client_socket_fd == -1)
-        return 0;
+        /*Do I really need this condition*/
+        // skip iteration if no incoming connections
+        if(_client_socket_fd == -1)
+            return 0;
 
     cout << "Connection accepted - " << _client_socket_fd << std::endl;
 

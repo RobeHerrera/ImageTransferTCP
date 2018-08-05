@@ -139,12 +139,12 @@
 	<string>
 	<sys/socket.h>
 
-1533503723 source:/home/rohe/Documents/ImageTransferTCP/Client/scr/tcp_client.cpp
+1533511313 source:/home/rohe/Documents/ImageTransferTCP/Client/scr/tcp_client.cpp
 	"../inc/tcp_client.h"
 	<cstring>
 	<iostream>
 
-1533341355 /home/rohe/Documents/ImageTransferTCP/Client/inc/tcp_client.h
+1533509385 /home/rohe/Documents/ImageTransferTCP/Client/inc/tcp_client.h
 	<sys/socket.h>
 	<netdb.h>
 	<netinet/in.h>
@@ -158,9 +158,14 @@
 	"node.h"
 	"utils.h"
 
-1533503725 source:/home/rohe/Documents/ImageTransferTCP/Client/scr/demo_Client.cpp
+1533510414 source:/home/rohe/Documents/ImageTransferTCP/Client/scr/demo_Client.cpp
 	<iostream>
 	"../inc/tcp_client.h"
 	<sstream>
 	<string>
+	<stdio.h>
+	<sys/types.h>
+	<ifaddrs.h>
+	<netinet/in.h>
+	<arpa/inet.h>
 
