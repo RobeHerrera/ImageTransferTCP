@@ -285,7 +285,7 @@ int client :: ReceivedImage(char nameImage[])
     cmd  = cmd + strSourceIP +", is_from_local_network:";
 
 
-    if(strcmp(strSourceIP,"127.0.0.0"))
+    if(!strcmp(strSourceIP,"127.0.0.1"))
     {
         cmd = cmd + "true\" ";
     }
