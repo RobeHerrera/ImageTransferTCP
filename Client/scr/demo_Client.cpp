@@ -78,12 +78,13 @@ getMyIPAddress();
     Create menu to choose what to do
     **********************************/
 
-    enum actions {CONNECT_TO_SERVER, STOP_CLIENT, RECEIVED_TEXT, RECEIVED_IMG, SEND_TEXT, SEND_IMG, EXIT};
+   // enum actions {CONNECT_TO_SERVER, STOP_CLIENT, RECEIVED_TEXT, RECEIVED_IMG, SEND_TEXT, SEND_IMG, EXIT};
+    enum actions {CONNECT_TO_SERVER, RECEIVED_IMG, SEND_TEXT, EXIT};
     int opt;
     do
     {
         cout << "\n\nSERVER - What do you want to do?" << std::endl;
-        cout << "0 - Connect to Server\n1 - Stop Client\n2 - Received Text\n3 - Received Img\n4 - Send Text\n5 - Send Img\n6 - EXIT\n";
+        cout << "0 - Connect to Server\n1 - Received Img\n3 - Send Text\n4 - EXIT\n";
         cin >> opt;
 
 // Error using switch (something about jump)
@@ -93,20 +94,6 @@ getMyIPAddress();
         {
             // connect to host node
             client.Connect();
-        }
-        break;
-
-        case STOP_CLIENT:
-        {
-            client.Stop();
-
-        }
-        break;
-
-        case RECEIVED_TEXT:
-        {
-
-
         }
         break;
 
@@ -150,10 +137,6 @@ getMyIPAddress();
 
         }
         break;
-
-        case SEND_IMG:
-
-            break;
 
         case EXIT:
             // Do nothing

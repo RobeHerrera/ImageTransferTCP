@@ -43,12 +43,14 @@ int main(int argc, char** argv)
     Create menu to choose what to do
     **********************************/
 
-    enum actions {RUN_SERVER, STOP_SERVER, RECEIVED_TEXT, RECEIVED_IMG, SEND_TEXT, SEND_IMG, EXIT};
+    //enum actions {RUN_SERVER, STOP_SERVER, RECEIVED_TEXT, RECEIVED_IMG, SEND_TEXT, SEND_IMG, EXIT};
+    enum actions {RUN_SERVER, STOP_SERVER, RECEIVED_TEXT,SEND_IMG, EXIT};
     int opt;
     do
     {
         cout << "\n\nSERVER - What do you want to do?" << std::endl;
-        cout << "0 - Run Server\n1 - Stop Server\n2 - Received Text\n3 - Received Img\n4 - Send Text\n5 - Send Img\n6 - EXIT\n";
+        //cout << "0 - Run Server\n1 - Stop Server\n2 - Received Text\n3 - Received Img\n4 - Send Text\n5 - Send Img\n6 - EXIT\n";
+        cout << "0 - Run Server\n1 - Stop Server\n2 - Received Text\n5 - Send Img\n6 - EXIT\n";
         cin >> opt;
 
 // Error using switch (something about jump)
@@ -83,15 +85,6 @@ int main(int argc, char** argv)
         }
             break;
 
-        case RECEIVED_IMG:
-
-
-            break;
-
-        case SEND_TEXT:
-
-
-            break;
 
         case SEND_IMG:
             server.SendImage();

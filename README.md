@@ -63,14 +63,17 @@ please see the DOC included in this repo.
 ### Update 5 / AUG / 2018
 - Manage the header IP TCP to set the correct UserComment
 
-## Update 5 / AUG / 2018
-- TODO: Complete image of Docker one for Server and other for Client
+## Update 6 / AUG / 2018
+- Complete image of Docker one for Server and other for Client
 
-## PENDING TASKS:
-- Accept more than one connection.
-- Create a docket images to recreate all this.
-- How I can I get the complte IP header, in wich buffer or struct is stored.
+## Update 7 / AUG / 2018
+- No update
 
+## Update 8 / AUG / 2018
+- No update
+
+## Update 9 / AUG / 2018
+- REmove some option and clean the project
 
 
 ### REQUIREMENTS
