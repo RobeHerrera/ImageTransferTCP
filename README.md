@@ -63,23 +63,23 @@ please see the DOC included in this repo.
 ### Update 5 / AUG / 2018
 - Manage the header IP TCP to set the correct UserComment.
 
-## Update 6 / AUG / 2018
+### Update 6 / AUG / 2018
 - Complete image of Docker one for Server and other for Client
 
-## Update 7 / AUG / 2018
+### Update 7 / AUG / 2018
 - No update
 
-## Update 8 / AUG / 2018
+### Update 8 / AUG / 2018
 - No update
 
-## Update 9 / AUG / 2018
+### Update 9 / AUG / 2018
 - Remove some option and clean the project
 
-## Update 13 / AUG / 2018
+### Update 13 / AUG / 2018
 - Minors changes, ask for the port and host address.
 
 
-### REQUIREMENTS
+## REQUIREMENTS
 1.- Use docker containers to emulate two machines connected in same network, all the solution needs to be able to download and run.
 -> Using Docker machine to emulate to machines with differents ips address
 
@@ -116,8 +116,8 @@ https://docs.google.com/document/d/1n2DJziuf2PPqxj4YZTYF2YOhK-QtAjWF4kPC7xDYB-k/
 
 Functionality:
 1.- We need to Run the Server (Server opt = 0).
-2.- Connect with the Client (Client opt = 0).
-3.- The Server send a image to the Client (Server opt = 5).
+2.- Connect with the Client (Client opt = 0), It will asked for the host address and port.
+3.- The Server send a image to the Client (Server opt = 3).
 4.- The Client must accept this connection (Client opt = 3).
 5.- Confirm in the console that the verification of exiftool has been done.
 
