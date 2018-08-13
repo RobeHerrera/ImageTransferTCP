@@ -34,34 +34,34 @@ please see the DOC included in this repo.
 - Added VM for Server and test with my local.
 
 ### Update 27 / JUL / 2018
-- Upload Program TCP images transfer
+- Upload Program TCP images transfer.
 
 ### Update 28/ JUL / 2018
-- Integrate program to server transfer images using classes
+- Integrate program to server transfer images using classes.
 
 ### Update 29/ JUL / 2018
-- DAY OF WITH FAMILY
+- Day off.
 
 ### Update 30/ JUL / 2018
-- NOTHING TO UPDATE
+- No update.
 
 ### Update 31/ JUL / 2018
-- Create Menu for Client and integrate image received
+- Create Menu for Client and integrate image received.
 
 ### Update 1 / AUG / 2018
-- No update
+- No update.
 
 ### Update 2 / AUG / 2018
-- No update
+- No update.
 
 ### Update 3 / AUG / 2018
-- Execute Command extern from Client side to use exiftool to read UserComment in the image received
+- Execute Command extern from Client side to use exiftool to read UserComment in the image received.
 
 ### Update 4 / AUG / 2018
-- Add system() to add metadata in the image
+- Add system() to add metadata in the image.
 
 ### Update 5 / AUG / 2018
-- Manage the header IP TCP to set the correct UserComment
+- Manage the header IP TCP to set the correct UserComment.
 
 ## Update 6 / AUG / 2018
 - Complete image of Docker one for Server and other for Client
