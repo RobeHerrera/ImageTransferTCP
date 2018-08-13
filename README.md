@@ -73,7 +73,10 @@ please see the DOC included in this repo.
 - No update
 
 ## Update 9 / AUG / 2018
-- REmove some option and clean the project
+- Remove some option and clean the project
+
+## Update 13 / AUG / 2018
+- Minors changes, ask for the port and host address.
 
 
 ### REQUIREMENTS
