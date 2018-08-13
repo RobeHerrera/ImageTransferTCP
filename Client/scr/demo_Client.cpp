@@ -49,28 +49,45 @@ void getMyIPAddress()
 
 int main(int argc, char** argv)
 {
-
     // initialize default port number and max connection cout
     int     port    = 12002;
-    string  address = "192.168.99.100";
-    //string  address = "127.0.0.1";
+    //string  address = "192.168.99.100";
+    string  addressHost = "127.0.0.1";
 
     // check if there are any passed arguments
     if(argc == 3)
     {
+        //.Client <Port> <hostAddress>
+        addressHost = argv[2];
+        string strPort = argv[1];
+
         // initialize string stream from argument
-        std::istringstream arg_stream(argv[1]);
+        std::istringstream arg_stream(strPort);
 
         // bind arguments stream to port int variable if valid
         if ( !(arg_stream >> port) )
-            std::cerr << "Invalid number " << argv[1] << '\n';
+            std::cerr << "Invalid number " << strPort << '\n';
+
+    }
+    //Ask for the necesary info
+    else
+    {
+        cout << "Enter Port: ";
+        cin >> port;
+
+        cout << "Enter Host Addres: ";
+        cin >> addressHost;
+
+
     }
 
+
+
     // create server instance with specified port number
-    tcp::client client(address,port);
+    tcp::client client(addressHost,port);
 
     //printf("cambio de endian de 12002: %x -> %x ",12002, ChangeEndianness(12002));
-getMyIPAddress();
+    getMyIPAddress();
 
 
 
@@ -78,13 +95,13 @@ getMyIPAddress();
     Create menu to choose what to do
     **********************************/
 
-   // enum actions {CONNECT_TO_SERVER, STOP_CLIENT, RECEIVED_TEXT, RECEIVED_IMG, SEND_TEXT, SEND_IMG, EXIT};
+    // enum actions {CONNECT_TO_SERVER, STOP_CLIENT, RECEIVED_TEXT, RECEIVED_IMG, SEND_TEXT, SEND_IMG, EXIT};
     enum actions {CONNECT_TO_SERVER, RECEIVED_IMG, SEND_TEXT, EXIT};
     int opt;
     do
     {
         cout << "\n\nSERVER - What do you want to do?" << std::endl;
-        cout << "0 - Connect to Server\n1 - Received Img\n3 - Send Text\n4 - EXIT\n";
+        cout << "0 - Connect to Server\n1 - Received Img\n2 - Send Text\n3 - EXIT\n";
         cin >> opt;
 
 // Error using switch (something about jump)

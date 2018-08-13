@@ -50,7 +50,7 @@ int main(int argc, char** argv)
     {
         cout << "\n\nSERVER - What do you want to do?" << std::endl;
         //cout << "0 - Run Server\n1 - Stop Server\n2 - Received Text\n3 - Received Img\n4 - Send Text\n5 - Send Img\n6 - EXIT\n";
-        cout << "0 - Run Server\n1 - Stop Server\n2 - Received Text\n5 - Send Img\n6 - EXIT\n";
+        cout << "0 - Run Server\n1 - Stop Server\n2 - Received Text\n3 - Send Img\n4 - EXIT\n";
         cin >> opt;
 
 // Error using switch (something about jump)
